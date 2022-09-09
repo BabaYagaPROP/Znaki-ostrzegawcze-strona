@@ -1,0 +1,79 @@
+#container{
+	width:100%;
+	margin-left: auto;
+	margin-right: auto;}
+	
+#header{
+
+background-color: #febe0b;
+color: black;
+text-align: center;
+padding: 6px;
+border-style: solid;
+border-color: rgb(215,0,0); }
+
+	
+body{
+	font-family: 'Arial', serif;
+}
+.menu{
+  overflow: hidden;}
+  
+
+.menu a {
+
+  float: center;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-style: solid;
+  border-color: rgb(215,0,0);}
+
+.menu a:hover {
+  background-color: #ddd;
+  color: black;}
+
+.menu a.aktywna {
+  background-color: #e9e9e9 ;
+  color: black;}
+
+
+ 
+#content{
+	height: 750px;
+	width: 100%;
+	text-align: center;
+	margin-top: 16px;
+
+}
+	
+	#footer{
+
+	clear:both;
+	background-color: #febe0b; 
+	color: black;
+	text-align: center;
+	padding:8px;
+	border-style: solid;
+	border-color: rgb(215,0,0);}
+	
+.wynik{
+	position: absolute;
+	top: 25%;
+	right:5%;
+}
+.nazwa{
+	position: absolute;
+	top: 50%;
+	left:45%;
+}
+#dalej{
+	position: absolute;
+	top: 60%;
+	left:49%;
+}
+img{
+	padding-top: 10%;
+}
