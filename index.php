@@ -16,23 +16,17 @@
 ?>
 <!DOCTYPE html>
 <head>
-<html lang="pl">
-<meta charset="utf-8">
-<title>Znaki ostrzegawcze</title>
+<title> Znaki Ostrzegawcze </title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<div id="container">
-<div id="header">
+<header> 
 <h1> ZNAKI OSTRZEGAWCZE </h1>
-</div>
-
-<div class="menu">
-	<a class="aktywna" href="index.php"><strong>Nauka</strong></a>
-	<a href="test.php?KOM=0"><strong> Test </strong></a>
-</div>
-<div id="content">
+</header>
+<nav>
+<a href="znaki.html"> Nauka </a> 
+<a href="test.html"> Test </a> 
+</nav>
 <?php
             if(!isset($_COOKIE[$cookie_name]))
                 echo "<img src='img/$cookie_value.png' alt='Znak'>";
@@ -79,13 +73,18 @@
                 }
             }
         ?>
-</div>
+<footer>
+<p><strong> Nauka znaków drogowych &copy; Wszelkie prawa zastrzeżone</strong></p>
+</footer>
+<img class="znak" src="1.png">
+<img class="znak" src="1.png">
+<img class="znak" src="1.png">
+<img class="znak" src="1.png">
+<img class="znak" src="1.png">
+<img class="znak" src="1.png">
+<img class="znak" src="1.png">
 
 
-<div id="footer">
-<strong>Nauka znaków drogowych &copy; Wszelkie prawa zastrzeżone </strong>
-</div>
-</div>
+
 </body>
-
 </html>
