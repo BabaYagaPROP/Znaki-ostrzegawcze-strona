@@ -1,79 +1,76 @@
 #container{
-	width:100%;
-	margin-left: auto;
-	margin-right: auto;}
+	width:100%; /* określenie szerokości strony na 100% */
+	margin-left: auto; /* automatyczna przestrzeń z lewej strony granicy strony */
+	margin-right: auto; /* automatyczna przestrzeń z prawej strony granicy strony */}
+
 	
 #header{
 
-background-color: #febe0b;
-color: black;
-text-align: center;
-padding: 6px;
-border-style: solid;
-border-color: rgb(215,0,0); }
+background-color: #febe0b; /* definicja koloru tła w nagłówku */
+color: black;  /* definicja koloru tekstu w nagłówku */
+text-align: center;  /* wyśrodkowanie tekstu w nagłówku*/
+padding: 6px;  /* przestrzeń pomiędzy krawędzią elementu a zawartością elementu ustawiona na 6px w nagłówku*/
+border-style: solid; /* ustawienie obramowania na ciągły, nieprzerywany, stały w nagłówku */
+border-color: rgb(215,0,0); /* ustawienie koloru obramowania w nagłówku*/ }
 
 	
 body{
-	font-family: 'Arial', serif;
+	font-family: 'Arial', serif; /* czcionka tekstu w body ustawiona na Arial*/
 }
 .menu{
-  overflow: hidden;}
+  overflow: hidden; /* w razie potrzeby zawartość jest przycinana, aby zmieścić się w menu */}
   
 
 .menu a {
 
-  float: center;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  border-style: solid;
-  border-color: rgb(215,0,0);}
-
-.menu a:hover {
-  background-color: #ddd;
-  color: black;}
+  float: center; /* ustawienie menu na środek strony */
+  color: black; /* ustawienie koloru tekstu w menu na czarny  */
+  text-align: center; /* wyśrodkowanie tekstu w menu */
+  padding: 14px 16px; /* przestrzeń pomiędzy krawędzią elementu a zawartością elementu ustawiona na 14px x 16px w menu */
+  text-decoration: none; /* wyłączenie dekoracji tekstu w menu*/
+  font-size: 17px; /* ustawienie rozmiaru czcionki tekstu w menu na 17px*/
+  border-style: solid; /* ustawienie obramowania na ciągły, nieprzerywany, stały w menu */
+  border-color: rgb(215,0,0);} /* ustawienie koloru obramowania w menu */
 
 .menu a.aktywna {
-  background-color: #e9e9e9 ;
-  color: black;}
+  background-color: #e9e9e9 ; /* ustawienie koloru aktywnej zakładdki na szary*/
+  color: black; /* */}
 
 
  
 #content{
-	height: 750px;
-	width: 100%;
-	text-align: center;
-	margin-top: 16px;
+	height: 750px;/* ustawienie wysokości miejsca na zawartość strony na 750px */
+	width: 100%; /* ustawienie szerokości miejsca na zawartość strony na 100% */
+	text-align: center; /* wyśrodkowanie tekstu w miejscu, w którym znajduje się zawartość strony */
+	margin-top: 16px; /*  przestrzeń wielkości 16px w górnej części miejscu, w którym znajduje się zawartość strony */
 
 }
 	
 	#footer{
 
-	clear:both;
-	background-color: #febe0b; 
-	color: black;
-	text-align: center;
-	padding:8px;
-	border-style: solid;
-	border-color: rgb(215,0,0);}
+	clear:both; /* dolna stopka jest wypuchana pod wszystkie elementy strony*/
+	background-color: #febe0b;  /* ustawienie koloru stopki */
+	color: black; /* ustawienie koloru czcionki w stopce na czarny */
+	text-align: center; /* wyśrodkowanie tekstu w stopce */
+	padding:8px; /* przestrzeń pomiędzy krawędzią elementu a zawartością elementu ustawiona na 8px w stopce */
+	border-style: solid; /* ustawienie obramowania na ciągły, nieprzerywany, stały w stopce */
+	border-color: rgb(215,0,0);} /* ustawienie koloru obramowania w stopce*/
 	
 .wynik{
-	position: absolute;
-	top: 25%;
-	right:5%;
+	position: absolute; /* ustawienie pozycji bezwzględnej wyniku*/
+	top: 25%; /* ustawienie wyniku 25% od góry*/
+	right:5%; /* ustawienie wyniku 5% od prawej strony*/
 }
 .nazwa{
-	position: absolute;
-	top: 50%;
-	left:45%;
-}
+	position: absolute; /*ustawienie pozycji bezwzględnej nazwie znaku  */
+	top: 50%; /* ustawienie nazwy znaku 50% od góry */
+	left:45%; /* ustawienie nazwy znaku 45% od lewej strony */
+} 
 #dalej{
-	position: absolute;
-	top: 60%;
-	left:49%;
+	position: absolute; /*ustawienie pozycji bezwzględnej przycisku dalej */
+	top: 60%; /* ustawienie przycisku dalej 60% od góry */
+	left:49%; /* ustawienie przycisku dalej 49% od lewej strony */
 }
 img{
-	padding-top: 10%;
+	padding-top: 10%; /* górna przestrzeń pomiędzy krawędzią elementu a zawartością elementu ustawiona na 10% */
 }
