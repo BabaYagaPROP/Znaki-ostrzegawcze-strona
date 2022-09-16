@@ -12,7 +12,7 @@ if(!isset($_COOKIE[$cookie_name]) ){
 	$rand = rand(1,6);
 	$cookie_value = $rand;
 	setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); 
-}setting the lanuage to polish
+}
 //if KOM has the same value of cookie znak, change value of existing cookie
 if($_GET['KOM'] == $_COOKIE[$cookie_name])
 {
