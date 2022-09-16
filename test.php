@@ -8,11 +8,11 @@ if(!isset($_COOKIE['punkty']))
 
 //set cookie znaki if it is not set yet
 if(!isset($_COOKIE[$cookie_name]) ){
-	//get random number and set it as cookie value
+	//get random number and set it as cookie valuesetting the title as Test
 	$rand = rand(1,6);
 	$cookie_value = $rand;
 	setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); 
-}
+}setting the lanuage to polish
 //if KOM has the same value of cookie znak, change value of existing cookie
 if($_GET['KOM'] == $_COOKIE[$cookie_name])
 {
@@ -29,26 +29,26 @@ if($_GET['KOM'] == $_COOKIE[$cookie_name])
 ?>
 <!DOCTYPE html>
 <head>
-<html lang="pl">
-<meta charset="utf-8">
-<title>Test</title>
-<link rel="stylesheet" href="style.css">
+<html lang="pl"> <!-- настройка языка для полировки -->
+<meta charset="utf-8"> <!-- karakterstel stelling -->
+<title>Test</title> <!-- 将标题设置为测试 -->
+<link rel="stylesheet" href="style.css"> <!-- připojení css k html -->
 </head>
 
 <body>
-<div id="container">
-<div id="header">
-<h1> TEST </h1>
+<div id="container"> <!--e hana ana i ka ipu div -->
+<div id="header"> <!-- יצירת כותרת ה-div -->
+<h1> TEST </h1> <!-- skrifa titilinn PRÓF  -->
 </div>
 
 <div class="menu">
-	<a class="aktywna" href="test.php?KOM=0"><strong>Test</strong></a>
-	<a href="index.php"><strong> Nauka </strong></a>
+	<a class="aktywna" href="test.php?KOM=0"><strong>Test</strong></a> <!-- mostrant el lloc actiu en negreta -->
+	<a href="index.php"><strong> Nauka </strong></a> <!-- Link zur Seite Nauka  -->
 
 
 </div>
 <div id="content">
-<a href="test.php?KOM=1"><img src="img/1.png" width="100" height="100" alt="Znak1"></a>
+<a href="test.php?KOM=1"><img src="img/1.png" width="100" height="100" alt="Znak1"></a> <!-- رەسىملەرنى كۆرسىتىدۇ -->
 <a href="test.php?KOM=2"><img src="img/2.png" width="100" height="100" alt="Znak2"></a>
 <a href="test.php?KOM=3"><img src="img/3.png" width="100" height="100" alt="Znak3"></a>
 <a href="test.php?KOM=4"><img src="img/4.png" width="100" height="100" alt="Znak4"></a>
@@ -85,7 +85,7 @@ echo '<h1 class="wynik">Wynik: ' . $_COOKIE['punkty'] . '</h1>';
 
 
 <div id="footer">
-<strong>Nauka znaków drogowych &copy; Wszelkie prawa dozwolone </strong>
+<strong>Nauka znaków drogowych &copy; Wszelkie prawa dozwolone </strong> <!-- ibonisa i-copyright ngezansi -->
 </div>
 </div>
 </body>
