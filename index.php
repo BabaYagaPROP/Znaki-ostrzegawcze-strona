@@ -1,56 +1,68 @@
 <?php
+// Path: index.php
+//declaration of cookie name
     $cookie_name = "znak";
-    
-    if(!isset($_COOKIE[$cookie_name]) ){
-        while($_COOKIE[$cookie_name] == $rand) 
-            $rand = rand(1,6);
-        $cookie_value = $rand;
-        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); 
+   
+    //if button value is 0 keep the same value of cookie
+    if(isset($_COOKIE[$cookie_name]) && isset($_POST['button']) && $_POST['button'] == 0 ){
+        setcookie($cookie_name, $_COOKIE[$cookie_name], time() + (86400 * 30), "/");
     }
-    else if(isset($_COOKIE[$cookie_name]) && isset($_POST['button']) && $_POST['button'] == 1)
-		{
-		$rand = rand(1,6);			
+    //if cookie is set or button 'znam' is pressed change value of existing cookie
+    else if(isset($_COOKIE[$cookie_name]) && isset($_POST['button']) && $_POST['button'] == 1){
+        $rand = $_COOKIE[$cookie_name];
         while($_COOKIE[$cookie_name] == $rand)
             $rand = rand(1,6);
         $cookie_value = $rand;
         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); 
-		}
-	
+    }
+    //set cookie if it is not set yet
+    else if(!isset($_COOKIE[$cookie_name])){
+        //get random number and set it as cookie value
+        $rand = rand(1,6);
+        $cookie_value = $rand;
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); 
+    }
+    
 ?>
-<!DOCTYPE html>		<!Znacznik deklaracji dokumentu html!>
-<head>		<!"Glowa, czyli sekcja naglowkowa"!>
-<html lang="pl">		<!Ustawienie jezyka!>
-<meta charset="utf-8">		<!Ustawanienie kodowania znakow!>
-<title>Znaki ostrzegawcze</title>		<!Tytul strony!>
-<link rel="stylesheet" href="style.css">		<!Podlaczenie css, czyli arkusza stylow!>
-</head>		<!"Glowa, czyli zamkniecie sekcji naglowkowej"!>
+<!DOCTYPE html>
+<head>
+<html lang="pl">
+<meta charset="utf-8">
+<title>Znaki ostrzegawcze</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-<body>		<!"Cialo", czyli zawartosc dokumentu (tresci/tekst)!>
-<div id="container">		<!Rodzaj pojemnika, w ktorym znajduja sie tresci (nazwa pojemnika: container). !!!Pojemniki moga miec osobne style w arkuszu css!!! !>
-<div id="header">			<!Rodzaj pojemnika, w ktorym znajduja sie tresci (nazwa pojemnika: header). !!!Pojemniki moga miec osobne style w arkuszu css!!! !>
-<h1> ZNAKI OSTRZEGAWCZE </h1>		<!Tekst "Znaki ostrzegawcze" o wielkosci h1 (h1,h2,h3...itd. to ustawienie wielkosci tekstu)!>
-</div>		<!Zamkniecie pojemnika o nazwie "header"!>
+<body>
+<div id="container">
+<div id="header">
+<h1> ZNAKI OSTRZEGAWCZE </h1>
+</div>
 
-<div class="menu">		<!Ustawienie wartosci artybutu!>
-	<a class="aktywna" href="index.php"><strong>Nauka</strong></a>		<!Wywolanie klasy "aktywna", adres dokumentu oraz pogrubiony napis "Nauka"!>
-	<a href="test.php?KOM=0"><strong> Test </strong></a>			<!Adres dokumentu oraz pogrubiony napis "Test"!>
-</div>					<!Zamkniecie pojemnika o nazwie "menu"!>
-<div id="content">		<!Utworzenie pojemnika o nazwie "content"!>
+<div class="menu">
+	<a class="aktywna" href="index.php"><strong>Nauka</strong></a>
+	<a href="test.php?KOM=0"><strong> Test </strong></a>
+</div>
+<div id="content">
 <?php
+            // because of the way cookies work, we need to check if cookie is set or not
             if(!isset($_COOKIE[$cookie_name]))
+                //if cookie is not set, display image with random number
                 echo "<img src='img/$cookie_value.png' alt='Znak'>";
+                //if cookie is set, display image with value of cookie
             else if(isset($_COOKIE[$cookie_name]))
                 echo "<img src='img/$_COOKIE[$cookie_name].png' alt='Znak'>"; 
                  
         ?>
-		<form action="index.php" method="post">			<!Utworzenie formularza: atrybut "action" określa, gdzie mają być wysyłane dane formularza podczas przesyłania formularza, metoda: post, czyli metoda przesyłania danych!>
-            <button type="submit" value="1" name="button" id="yes">Znam</button>		<!Przycisk do przeslania odpowiedzi o wartosci "1", wyswietli sie odpowiedz o tresci: "Znam"!>
-            <button type="submit" value="0" name="button" id="no">Nie znam</button>		<!Przycisk do przeslania odpowiedzi o wartosci "0", wyswietli sie odpowiedz o tresci: "Nie znam"!>
-        </form>		<!Zamnkniecie formularza!>
-		<br>		<!Przechodzi do nowej lini!>
+		<form action="index.php" method="post">
+            <button type="submit" value="1" name="button" id="yes">Znam</button>
+            <button type="submit" value="0" name="button" id="no">Nie znam</button>
+        </form>
+		<br>
         <?php
+        //if button 'znam' is pressed, display description of the sign
             if(isset($_POST['button']) && $_POST['button'] == 0)
             {
+                //switch case to display description of the sign
                 switch($_COOKIE[$cookie_name])
                 {
                     case 1:
@@ -82,13 +94,13 @@
                 }
             }
         ?>
-</div>		<!Zamkniecie pojemnika o nazwie "content"!>
+</div>
 
 
-<div id="footer">		<!Utworzenie tzw. stopki. Stopka przechowuje zwykle informacje na temat sekcji - np.: autor, linki..itd.!>
-<strong>Nauka znaków drogowych &copy; Wszelkie prawa zastrzeżone </strong>		<!Pogrubiony napis wyswietlajacy sie w stopce!>
-</div>					<!Zamkniecie pojemnika o nazwie "footer" (zamkniecie stopki)!>
-</div>					<!Zamkniecie pojemnika o nazwie "container" (zamkniecie konteneru, czyli pojemnika na tresc)!>
-</body>					<!Zamkniecie zawartosci dokumentu!>
+<div id="footer">
+<strong>Nauka znaków drogowych &copy; Wszelkie prawa zastrzeżone </strong>
+</div>
+</div>
+</body>
 
-</html>					<!Zamkniecie dokumentu (zakonczenie)!>
+</html>
