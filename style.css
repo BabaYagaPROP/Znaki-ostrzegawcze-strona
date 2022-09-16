@@ -64,7 +64,8 @@ body{
 .nazwa{
 	position: absolute; /*ustawienie pozycji bezwzględnej nazwie znaku  */
 	top: 50%; /* ustawienie nazwy znaku 50% od góry */
-	left:45%; /* ustawienie nazwy znaku 45% od lewej strony */
+	right:50%; /* keep element 50% of the site width away from the right side */
+	transform: translate(50%,-50%); /* move element by half its size */
 } 
 #dalej{
 	position: absolute; /*ustawienie pozycji bezwzględnej przycisku dalej */
