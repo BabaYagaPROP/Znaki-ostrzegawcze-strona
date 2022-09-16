@@ -1,21 +1,29 @@
 <?php
+// Path: test.php
+//declaration of cookie name for signs
 $cookie_name = "znak";
+//set cookie punkty if it is not set yet
 if(!isset($_COOKIE['punkty']))
 	setcookie('punkty', 0, time() + (86400 * 30), "/");
-    
+
+//set cookie znaki if it is not set yet
 if(!isset($_COOKIE[$cookie_name]) ){
-	while($_COOKIE[$cookie_name] == $rand)
-		$rand = rand(1,6);
+	//get random number and set it as cookie value
+	$rand = rand(1,6);
 	$cookie_value = $rand;
 	setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); 
 }
-
+//if KOM has the same value of cookie znak, change value of existing cookie
 if($_GET['KOM'] == $_COOKIE[$cookie_name])
 {
+	//make sure that value is not the same as the last cookie
+	$rand = rand(1,6);
 	while($_COOKIE[$cookie_name] == $rand)
 		$rand = rand(1,6);
 	$cookie_value = $rand;
+	//update cookie znaki 
 	setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); 
+	//increment value of cookie punkty
 	setcookie('punkty', $_COOKIE['punkty'] + 1, time() + (86400 * 30), "/");
 }
 ?>
@@ -47,11 +55,11 @@ if($_GET['KOM'] == $_COOKIE[$cookie_name])
 <a href="test.php?KOM=5"><img src="img/5.png" width="100" height="100" alt="Znak5"></a>
 <a href="test.php?KOM=6"><img src="img/6.png" width="100" height="100" alt="Znak6"></a>
 </div>
-<form action="test.php" method="get">
-	<button id="dalej">Dalej</button>
-</form>
+
 <?php
+//display cookie value
 echo '<h1 class="wynik">Wynik: ' . $_COOKIE['punkty'] . '</h1>';
+//switch statement to display proper name of the sign which is the answer
 	switch($_COOKIE[$cookie_name])
 	{
 		case 1:
