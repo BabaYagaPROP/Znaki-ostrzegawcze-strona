@@ -49,12 +49,12 @@ else{
 //if button wasnt pressed yet display the first image
 if(!isset($_POST['button']) && isset($_COOKIE['sign']))
 {
-    echo "<img src='img/".$_COOKIE['sign'].".png' alt='znak' />";
+    echo "<img src='img/".$_COOKIE['sign'].".svg' alt='znak' />";
 }
 //if button was pressed display the next image
 else if(isset($_COOKIE['sign'])&& isset($_POST['button']) && $_POST['button'] == 1)
 {
-    echo "<img src='img/".$_COOKIE['sign'].".png' alt='znak' />";
+    echo "<img src='img/".$_COOKIE['sign'].".svg' alt='znak' />";
 }
 //if the cookie is set and button nie znam is pressed display the image with the answer
 else if(isset($_COOKIE['sign']) && isset($_POST['button']) && $_POST['button'] == 0)
@@ -62,27 +62,26 @@ else if(isset($_COOKIE['sign']) && isset($_POST['button']) && $_POST['button'] =
     //if the page is loaded for the first time display the image with the answer
     if($_COOKIE['first'] == 1)
     {
-        echo "<img src='img/".($_COOKIE['sign']).".png' alt='znak' />";
+        echo "<img src='img/".($_COOKIE['sign']).".svg' alt='znak' />";
     }
     //if the page is loaded for for more than one time display the image -1
     else if($_COOKIE['sign'] == 1 && $_COOKIE['first'] == 0)
     {
-        echo "<img src='img/6.png' alt='znak' />";
+        echo "<img src='img/6.svg' alt='znak' />";
     }
     else if($_COOKIE['sign'] != 1 && $_COOKIE['first'] == 0)
     {
-        echo "<img src='img/".($_COOKIE['sign']-1).".png' alt='znak' />";
+        echo "<img src='img/".($_COOKIE['sign']-1).".svg' alt='znak' />";
     }
 }
 
                  
 ?>
 		<form action="index.php" method="post">			<!Utworzenie formularza: atrybut "action" określa, gdzie mają być wysyłane dane formularza podczas przesyłania formularza, metoda: post, czyli metoda przesyłania danych!>
-            <button type="submit" value="1" name="button" id="yes">Znam</button>		<!Przycisk do przeslania odpowiedzi o wartosci "1", wyswietli sie odpowiedz o tresci: "Znam"!>
-            <button type="submit" value="0" name="button" id="no">Nie znam</button>		<!Przycisk do przeslania odpowiedzi o wartosci "0", wyswietli sie odpowiedz o tresci: "Nie znam"!>
+            <button class="znam" type="submit" value="1" name="button" id="yes">Znam</button>		<!Przycisk do przeslania odpowiedzi o wartosci "1", wyswietli sie odpowiedz o tresci: "Znam"!>
+            <button class="nieznam" type="submit" value="0" name="button" id="no">Nie znam</button>		<!Przycisk do przeslania odpowiedzi o wartosci "0", wyswietli sie odpowiedz o tresci: "Nie znam"!>
         </form>		<!Zamnkniecie formularza!>
-		<br>		<!Przechodzi do nowej lini!>
-		<br>
+		
         <?php
         //if button 'znam' is pressed, display description of the sign
         if(isset($_POST['button']) && $_POST['button'] == 0)
@@ -95,34 +94,32 @@ else if(isset($_COOKIE['sign']) && isset($_POST['button']) && $_POST['button'] =
             switch($sign)
             {
                 case 1:
-                    echo "<h2>Znak ostrzega przed miejscem na drodze szczególnie uczęszczanym przez dzieci w wieku od 7 do 15 lat. Znak umieszcza się zwłaszcza w pobliżu szkół podstawowych, gimnazjów, placówek prowadzących zajęcia z dziećmi, terenów zabaw itp.</h2>";
+                    echo '<div class="tekst" "<h2>Znak ostrzega przed miejscem na drodze szczególnie uczęszczanym przez dzieci w wieku od 7 do 15 lat. Znak umieszcza się zwłaszcza w pobliżu szkół podstawowych, gimnazjów, placówek prowadzących zajęcia z dziećmi, terenów zabaw itp.</h2>';
                     break;
                 case 2:
-                    echo "<h2>Znak ostrzega przed miejscem, w którym ruch jest kierowany za pomocą sygnalizacji świetlnej. Znak stosuje się:
+                    echo ' <div class="tekst" <h2>Znak ostrzega przed miejscem, w którym ruch jest kierowany za pomocą sygnalizacji świetlnej. Znak stosuje się:
                     przed każdą sygnalizacją świetlną poza obszarem zabudowanym,
                     przed pierwszą sygnalizacją w obszarze zabudowanym,
                     w każdym miejscu, gdzie sygnalizacja zastosowana została do kierowania ruchem wahadłowym,
-                    w każdym miejscu, gdzie sygnalizator jest tylko zawieszony nad jezdnią.</h2>";
+                    w każdym miejscu, gdzie sygnalizator jest tylko zawieszony nad jezdnią.</h2> </div> ';
                     break;
                 case 3:
-                    echo "<h2>Znak ostrzega przed koniecznością ustąpienia pierwszeństwa. Umieszczony jest na drodze podporządkowanej przed skrzyżowaniem z drogą z pierwszeństwem, gdy spełnione są warunki widoczności (w innym wypadku stosuje się znak B-20 „stop”). W obrębie skrzyżowania znak dotyczy tylko najbliższej jezdni, przed którą został umieszczony. Umieszczony razem ze znakiem C-12 „ruch okrężny” określa pierwszeństwo dla znajdującego się na skrzyżowaniu. Może być umieszczony w innych miejscach, gdzie z przepisów ustawy – Prawo o ruchu drogowym wynika obowiązek ustąpienia pierwszeństwa, np. wyjazd z obiektu, torowisko tramwajowe.
-                    Pod znakiem może być umieszczona tabliczka T-6c „tabliczka wskazująca rzeczywisty przebieg drogi z pierwszeństwem przez skrzyżowanie”
-                    
-                    Na drogach o dopuszczalnej prędkości powyżej 60 km/h znak A-7 poprzedzany jest znakiem A-7 z tabliczką T-1 „tabliczka wskazująca odległość znaku ostrzegawczego od miejsca niebezpiecznego”.</h2>";
+                    echo ' <div class="tekst" <h2>Znak ostrzega przed koniecznością ustąpienia pierwszeństwa. Umieszczony jest na drodze podporządkowanej przed skrzyżowaniem z drogą z pierwszeństwem, gdy spełnione są warunki widoczności. W obrębie skrzyżowania znak dotyczy tylko najbliższej jezdni, przed którą został umieszczony. Umieszczony razem ze znakiem C-12 „ruch okrężny” określa pierwszeństwo dla znajdującego się na skrzyżowaniu.”.</h2></div>';
                     break;
                 case 4:
-                    echo "<h2>Znak ostrzega przed skrzyżowaniem z drogą podporządkowaną występującą po obu stronach drogi z pierwszeństwem. Stosowany jest poza obszarem zabudowanym dla wskazania pierwszeństwa drogi przebiegającej na wprost, przy której jest ustawiony. Jeżeli osie dróg poprzecznych nie przecinają się na skrzyżowaniu, stosuje się tabliczkę T-6b „tabliczka wskazująca układ dróg podporządkowanych”.</h2>";
+                    echo ' <div class="tekst" <h2>Znak ostrzega przed skrzyżowaniem z drogą podporządkowaną występującą po obu stronach drogi z pierwszeństwem. Stosowany jest poza obszarem zabudowanym dla wskazania pierwszeństwa drogi przebiegającej na wprost, przy której jest ustawiony. Jeżeli osie dróg poprzecznych nie przecinają się na skrzyżowaniu, stosuje się tabliczkę T-6b „tabliczka wskazująca układ dróg podporządkowanych”.</h2></div>';
                     break;
                 case 5:
-                    echo "<h2>Znak ostrzega przed pojedynczym niebezpiecznym zakrętem w prawo. Stosuje się go na ogół poza miastami, gdy kąt zwrotu łuku drogi jest większy niż 5°, a jego promień jest mniejszy niż 750 m oraz w zależności od przechyłki. Ustawiany także na zakrętach o ograniczonej widoczności, bądź gdzie dochodzi do częstych wypadków lub kolizji.</h2>";
+                    echo '<div class="tekst" <h2>Znak ostrzega przed pojedynczym niebezpiecznym zakrętem w prawo. Stosuje się go na ogół poza miastami, gdy kąt zwrotu łuku drogi jest większy niż 5°, a jego promień jest mniejszy niż 750 m oraz w zależności od przechyłki. Ustawiany także na zakrętach o ograniczonej widoczności, bądź gdzie dochodzi do częstych wypadków lub kolizji".</h2></div>';
                     break;
                 case 0:
-                    echo "<h2>Zwierzęta dzikie</h2>";
+                    echo '<div class="tekst" <h2>Zwierzęta dzikie</h2> </div>';
                     break;
 
             }
         }
         ?>
+		</div>
 </div>		<!Zamkniecie pojemnika o nazwie "content"!>
 
 

@@ -10,42 +10,99 @@ background-color: #febe0b; /* definicja koloru tła w nagłówku */
 color: black;  /* definicja koloru tekstu w nagłówku */
 text-align: center;  /* wyśrodkowanie tekstu w nagłówku*/
 padding: 6px;  /* przestrzeń pomiędzy krawędzią elementu a zawartością elementu ustawiona na 6px w nagłówku*/
-border-style: solid; /* ustawienie obramowania na ciągły, nieprzerywany, stały w nagłówku */
-border-color: rgb(215,0,0); /* ustawienie koloru obramowania w nagłówku*/ }
+ /* ustawienie obramowania na ciągły, nieprzerywany, stały w nagłówku */
+border: 6px solid rgb(215,0,0); /* ustawienie koloru obramowania w nagłówku*/ 
+margin-top: 20px;
+margin-left: 100px;
+margin-right: 100px;
+box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+border-radius: 30px;
+}
 
+html{
+max-height: 100%;}
 	
 body{
 	font-family: 'Arial', serif; /* czcionka tekstu w body ustawiona na Arial*/
+	background: url('img/ulica.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin:0;
+	max-height: 100%;
+	
+	
+	
 }
 .menu{
-  overflow: hidden; /* w razie potrzeby zawartość jest przycinana, aby zmieścić się w menu */}
+float: middle;
+text-decoration: none;
+margin-top: 10px;
+margin-bottom: 10px;
+width: 100%;
+float: center;
+display: flex;
+justify-content: center;
+overflow: hidden;
+padding-bottom: 10px;
+
+}
   
 
 .menu a {
-
-  float: center; /* ustawienie menu na środek strony */
-  color: black; /* ustawienie koloru tekstu w menu na czarny  */
-  text-align: center; /* wyśrodkowanie tekstu w menu */
-  padding: 14px 16px; /* przestrzeń pomiędzy krawędzią elementu a zawartością elementu ustawiona na 14px x 16px w menu */
-  text-decoration: none; /* wyłączenie dekoracji tekstu w menu*/
-  font-size: 17px; /* ustawienie rozmiaru czcionki tekstu w menu na 17px*/
-  border-style: solid; /* ustawienie obramowania na ciągły, nieprzerywany, stały w menu */
-  border-color: rgb(215,0,0);} /* ustawienie koloru obramowania w menu */
+	background-color: #febe0b;
+	border: 4px solid #d40000;
+	text-decoration: none;
+	color: black;
+	display: inline-block;
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 300px;
+	font-weight: bold;
+	height: 20px;
+	transition-duration: 1s;
+box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+border-radius: 30px;}
 
 .menu a.aktywna {
-  background-color: #e9e9e9 ; /* ustawienie koloru aktywnej zakładdki na szary*/
-  color: black; /* */}
+	
+	margin-right: 20px;
+	
+}
+
+.menu a:hover{
+	width: 340px;
+	font-weight: bolder;
+transition-duration: 1s;
+margin: 10px 0px;}
 
 
  
 #content{
-	height: 750px;/* ustawienie wysokości miejsca na zawartość strony na 750px */
+	height: 650px;/* ustawienie wysokości miejsca na zawartość strony na 750px */
 	width: 100%; /* ustawienie szerokości miejsca na zawartość strony na 100% */
 	text-align: center; /* wyśrodkowanie tekstu w miejscu, w którym znajduje się zawartość strony */
 	margin-top: 16px; /*  przestrzeń wielkości 16px w górnej części miejscu, w którym znajduje się zawartość strony */
 
 }
-	
+.znam,.nieznam {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px 10px 10px;
+  width:140px;
+}
+
+.nieznam{
+	background-color: #f44336;
+}
 	#footer{
 
 	clear:both; /* dolna stopka jest wypuchana pod wszystkie elementy strony*/
@@ -53,8 +110,14 @@ body{
 	color: black; /* ustawienie koloru czcionki w stopce na czarny */
 	text-align: center; /* wyśrodkowanie tekstu w stopce */
 	padding:8px; /* przestrzeń pomiędzy krawędzią elementu a zawartością elementu ustawiona na 8px w stopce */
-	border-style: solid; /* ustawienie obramowania na ciągły, nieprzerywany, stały w stopce */
-	border-color: rgb(215,0,0);} /* ustawienie koloru obramowania w stopce*/
+	 /* ustawienie obramowania na ciągły, nieprzerywany, stały w stopce */
+	border: 4px solid #d40000; /* ustawienie koloru obramowania w stopce*/
+	margin-left: 100px;
+	margin-right: 100px;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+	border-radius: 30px;
+
+	}
 	
 .wynik{
 	position: absolute; /* ustawienie pozycji bezwzględnej wyniku*/
@@ -73,5 +136,35 @@ body{
 	left:49%; /* ustawienie przycisku dalej 49% od lewej strony */
 }
 img{
-	padding-top: 10%; /* górna przestrzeń pomiędzy krawędzią elementu a zawartością elementu ustawiona na 10% */
+height: 353px;
+width: 400px;
+padding-top: 60px;
+}
+
+.tekst{
+		background: rgba(34, 34, 34, 0.73);
+		color: white;
+		padding: 10px;
+		margin: 30px 125px;
+		font-size: 24px;
+}
+
+.kwiz{
+	height: 176px;
+width: 200px;}
+.wynik{
+	 background-color: #4CAF50;
+	 color: white;
+padding: 10px;}
+
+.nazwa{
+	background: rgba(34, 34, 34, 0.73);
+	color: white;
+	padding: 10px;
+	font-size: 48px;
+	float: middle;
+	justify-content: center;
+	display: flex;
+	overflow: hidden;
+	margin-top: 100px;
 }

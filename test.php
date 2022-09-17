@@ -42,18 +42,18 @@ if($_GET['KOM'] == $_COOKIE[$cookie_name])
 </div>
 
 <div class="menu">
-	<a class="aktywna" href="test.php?KOM=0"><strong>Test</strong></a> <!-- link do aktywnej strony jest pogrubiony -->
 	<a href="index.php"><strong> Nauka </strong></a> <!-- link do strony nauka  -->
+	<a class="aktywna" href="test.php?KOM=0"><strong>Test</strong></a> <!-- link do aktywnej strony jest pogrubiony -->
 
 
 </div>
 <div id="content">
-<a href="test.php?KOM=1"><img src="img/1.png" width="100" height="100" alt="Znak1"></a> <!-- Wyświetlanie zdjęć -->
-<a href="test.php?KOM=2"><img src="img/2.png" width="100" height="100" alt="Znak2"></a>
-<a href="test.php?KOM=3"><img src="img/3.png" width="100" height="100" alt="Znak3"></a>
-<a href="test.php?KOM=4"><img src="img/4.png" width="100" height="100" alt="Znak4"></a>
-<a href="test.php?KOM=5"><img src="img/5.png" width="100" height="100" alt="Znak5"></a>
-<a href="test.php?KOM=6"><img src="img/6.png" width="100" height="100" alt="Znak6"></a>
+<a href="test.php?KOM=1"><img class="kwiz" src="img/1.svg" width="100" height="100" alt="Znak1"></a> <!-- Wyświetlanie zdjęć -->
+<a href="test.php?KOM=2"><img class="kwiz" src="img/2.svg" width="100" height="100" alt="Znak2"></a>
+<a href="test.php?KOM=3"><img  class="kwiz"src="img/3.svg" width="100" height="100" alt="Znak3"></a>
+<a href="test.php?KOM=4"><img class="kwiz" src="img/4.svg" width="100" height="100" alt="Znak4"></a>
+<a href="test.php?KOM=5"><img class="kwiz" src="img/5.svg" width="100" height="100" alt="Znak5"></a>
+<a href="test.php?KOM=6"><img class="kwiz" src="img/6.svg" width="100" height="100" alt="Znak6"></a>
 </div>
 
 <?php
