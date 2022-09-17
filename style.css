@@ -1,79 +1,167 @@
 #container{
-	width:100%;
-	margin-left: auto;
-	margin-right: auto;}
+	width:100%; /* określenie szerokości strony na 100% */
+	margin-left: auto; /* automatyczna przestrzeń z lewej strony granicy strony */
+	margin-right: auto; /* automatyczna przestrzeń z prawej strony granicy strony */}
+
 	
 #header{
 
-background-color: #febe0b;
-color: black;
-text-align: center;
-padding: 6px;
-border-style: solid;
-border-color: rgb(215,0,0); }
+background-color: #febe0b; /* definicja koloru tła w nagłówku */
+color: black;  /* definicja koloru tekstu w nagłówku */
+text-align: center;  /* wyśrodkowanie tekstu w nagłówku*/
+padding: 6px;  /* przestrzeń pomiędzy krawędzią elementu a zawartością elementu ustawiona na 6px w nagłówku*/
+ /* ustawienie obramowania na ciągły, nieprzerywany, stały w nagłówku */
+border: 6px solid rgb(215,0,0); /* ustawienie koloru obramowania w nagłówku*/ 
+margin-top: 20px;
+margin-left: 100px;
+margin-right: 100px;
+box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+border-radius: 30px;
+}
 
+html{
+max-height: 100%;}
 	
 body{
-	font-family: 'Arial', serif;
+	font-family: 'Arial', serif; /* czcionka tekstu w body ustawiona na Arial*/
+	background: url(img/ulica.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin:0;
+	max-height: 100%;
+	
+	
+	
 }
 .menu{
-  overflow: hidden;}
+float: middle;
+text-decoration: none;
+margin-top: 10px;
+margin-bottom: 10px;
+width: 100%;
+float: center;
+display: flex;
+justify-content: center;
+overflow: hidden;
+padding-bottom: 10px;
+
+}
   
 
 .menu a {
-
-  float: center;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  border-style: solid;
-  border-color: rgb(215,0,0);}
-
-.menu a:hover {
-  background-color: #ddd;
-  color: black;}
+	background-color: #febe0b;
+	border: 4px solid #d40000;
+	text-decoration: none;
+	color: black;
+	display: inline-block;
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 300px;
+	font-weight: bold;
+	height: 20px;
+	transition-duration: 1s;
+box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+border-radius: 30px;}
 
 .menu a.aktywna {
-  background-color: #e9e9e9 ;
-  color: black;}
+	width: 350px;
+	
+}
+
+.menu a:hover{
+	width: 400px;
+	font-weight: bolder;
+transition-duration: 1s;}
 
 
  
 #content{
-	height: 750px;
-	width: 100%;
-	text-align: center;
-	margin-top: 16px;
+	height: 650px;/* ustawienie wysokości miejsca na zawartość strony na 750px */
+	width: 100%; /* ustawienie szerokości miejsca na zawartość strony na 100% */
+	text-align: center; /* wyśrodkowanie tekstu w miejscu, w którym znajduje się zawartość strony */
+	margin-top: 16px; /*  przestrzeń wielkości 16px w górnej części miejscu, w którym znajduje się zawartość strony */
 
 }
-	
+.znam,.nieznam {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px 10px 10px;
+}
+
+.nieznam{
+	background-color: #f44336;
+}
 	#footer{
 
-	clear:both;
-	background-color: #febe0b; 
-	color: black;
-	text-align: center;
-	padding:8px;
-	border-style: solid;
-	border-color: rgb(215,0,0);}
+	clear:both; /* dolna stopka jest wypuchana pod wszystkie elementy strony*/
+	background-color: #febe0b;  /* ustawienie koloru stopki */
+	color: black; /* ustawienie koloru czcionki w stopce na czarny */
+	text-align: center; /* wyśrodkowanie tekstu w stopce */
+	padding:8px; /* przestrzeń pomiędzy krawędzią elementu a zawartością elementu ustawiona na 8px w stopce */
+	 /* ustawienie obramowania na ciągły, nieprzerywany, stały w stopce */
+	border: 4px solid #d40000; /* ustawienie koloru obramowania w stopce*/
+	margin-left: 100px;
+	margin-right: 100px;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+	border-radius: 30px;
+
+	}
 	
 .wynik{
-	position: absolute;
-	top: 25%;
-	right:5%;
+	position: absolute; /* ustawienie pozycji bezwzględnej wyniku*/
+	top: 25%; /* ustawienie wyniku 25% od góry*/
+	right:5%; /* ustawienie wyniku 5% od prawej strony*/
 }
 .nazwa{
-	position: absolute;
-	top: 50%;
-	left:45%;
-}
+	position: absolute; /*ustawienie pozycji bezwzględnej nazwie znaku  */
+	top: 50%; /* ustawienie nazwy znaku 50% od góry */
+	right:50%; /* keep element 50% of the site width away from the right side */
+	transform: translate(50%,-50%); /* move element by half its size */
+} 
 #dalej{
-	position: absolute;
-	top: 60%;
-	left:49%;
+	position: absolute; /*ustawienie pozycji bezwzględnej przycisku dalej */
+	top: 60%; /* ustawienie przycisku dalej 60% od góry */
+	left:49%; /* ustawienie przycisku dalej 49% od lewej strony */
 }
 img{
-	padding-top: 10%;
+height: 353px;
+width: 400px;
+padding-top: 60px;
+}
+
+.tekst{
+		background: rgba(34, 34, 34, 0.73);
+		color: white;
+		padding: 10px;
+		margin: 30px 125px;
+		font-size: 24px;
+}
+
+.kwiz{
+	height: 176px;
+width: 200px;}
+.wynik{
+	 background-color: #4CAF50;
+	 color: white;
+padding: 10px;}
+
+.nazwa{
+	background: rgba(34, 34, 34, 0.73);
+	color: white;
+	padding: 10px;
+	font-size: 48px;
+	float: middle;
+	justify-content: center;
+	display: flex;
+	overflow: hidden;
+	margin-top: 100px;
 }
