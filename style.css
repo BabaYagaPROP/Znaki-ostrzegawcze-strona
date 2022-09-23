@@ -75,3 +75,13 @@ body{
 img{
 	padding-top: 10%; /* górna przestrzeń pomiędzy krawędzią elementu a zawartością elementu ustawiona na 10% */
 }
+.img_index
+{
+	height: 353px;
+	width: 700px;
+}
+.img_test
+{
+	height: 130px;
+	width: 130px;
+}

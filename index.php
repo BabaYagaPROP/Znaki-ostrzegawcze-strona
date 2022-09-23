@@ -49,12 +49,12 @@ else{
 //if button wasnt pressed yet display the first image
 if(!isset($_POST['button']) && isset($_COOKIE['sign']))
 {
-    echo "<img src='img/".$_COOKIE['sign'].".png' alt='znak' />";
+    echo "<img src='img/".$_COOKIE['sign'].".svg' alt='znak' class='img_index' />";
 }
 //if button was pressed display the next image
 else if(isset($_COOKIE['sign'])&& isset($_POST['button']) && $_POST['button'] == 1)
 {
-    echo "<img src='img/".$_COOKIE['sign'].".png' alt='znak' />";
+    echo "<img src='img/".$_COOKIE['sign'].".svg' alt='znak' class='img_index' />";
 }
 //if the cookie is set and button nie znam is pressed display the image with the answer
 else if(isset($_COOKIE['sign']) && isset($_POST['button']) && $_POST['button'] == 0)
@@ -62,16 +62,16 @@ else if(isset($_COOKIE['sign']) && isset($_POST['button']) && $_POST['button'] =
     //if the page is loaded for the first time display the image with the answer
     if($_COOKIE['first'] == 1)
     {
-        echo "<img src='img/".($_COOKIE['sign']).".png' alt='znak' />";
+        echo "<img src='img/".($_COOKIE['sign']).".svg' alt='znak' class='img_index' />";
     }
     //if the page is loaded for for more than one time display the image -1
     else if($_COOKIE['sign'] == 1 && $_COOKIE['first'] == 0)
     {
-        echo "<img src='img/6.png' alt='znak' />";
+        echo "<img src='img/6.svg' alt='znak' class='img_index' />";
     }
     else if($_COOKIE['sign'] != 1 && $_COOKIE['first'] == 0)
     {
-        echo "<img src='img/".($_COOKIE['sign']-1).".png' alt='znak' />";
+        echo "<img src='img/".($_COOKIE['sign']-1).".svg' alt='znak' class='img_index' />";
     }
 }
 
@@ -127,7 +127,8 @@ else if(isset($_COOKIE['sign']) && isset($_POST['button']) && $_POST['button'] =
 
 
 <div id="footer">		<!Utworzenie tzw. stopki. Stopka przechowuje zwykle informacje na temat sekcji - np.: autor, linki..itd.!>
-<strong>Nauka znaków drogowych &copy; Wszelkie prawa zastrzeżone </strong>		<!Pogrubiony napis wyswietlajacy sie w stopce!>
+
+<strong>Nauka znaków drogowych &copy; Kamil Pawlak Joanna Lipińska Lukas Zembok Kamil Szulc</strong>		<!Pogrubiony napis wyswietlajacy sie w stopce!>
 </div>					<!Zamkniecie pojemnika o nazwie "footer" (zamkniecie stopki)!>
 </div>					<!Zamkniecie pojemnika o nazwie "container" (zamkniecie konteneru, czyli pojemnika na tresc)!>
 </body>					<!Zamkniecie zawartosci dokumentu!>

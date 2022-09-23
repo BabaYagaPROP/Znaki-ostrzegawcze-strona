@@ -3,7 +3,7 @@
 //declaration of cookie name for signs
 $cookie_name = "znak";
 //set cookie punkty if it is not set yet
-if(!isset($_COOKIE['punkty']))
+if(!isset($_COOKIE['punkty']) || $_GET['KOM'] == 0)
 	setcookie('punkty', 0, time() + (86400 * 30), "/");
 
 //set cookie znaki if it is not set yet
@@ -48,12 +48,12 @@ if($_GET['KOM'] == $_COOKIE[$cookie_name])
 
 </div>
 <div id="content">
-<a href="test.php?KOM=1"><img src="img/1.png" width="100" height="100" alt="Znak1"></a> <!-- Wyświetlanie zdjęć -->
-<a href="test.php?KOM=2"><img src="img/2.png" width="100" height="100" alt="Znak2"></a>
-<a href="test.php?KOM=3"><img src="img/3.png" width="100" height="100" alt="Znak3"></a>
-<a href="test.php?KOM=4"><img src="img/4.png" width="100" height="100" alt="Znak4"></a>
-<a href="test.php?KOM=5"><img src="img/5.png" width="100" height="100" alt="Znak5"></a>
-<a href="test.php?KOM=6"><img src="img/6.png" width="100" height="100" alt="Znak6"></a>
+<a href="test.php?KOM=1"><img src="img/1.svg" class="img_test"  alt="Znak1"></a> <!-- Wyświetlanie zdjęć -->
+<a href="test.php?KOM=2"><img src="img/2.svg" class="img_test"  alt="Znak2"></a>
+<a href="test.php?KOM=3"><img src="img/3.svg" class="img_test"  alt="Znak3"></a>
+<a href="test.php?KOM=4"><img src="img/4.svg" class="img_test"  alt="Znak4"></a>
+<a href="test.php?KOM=5"><img src="img/5.svg" class="img_test"  alt="Znak5"></a>
+<a href="test.php?KOM=6"><img src="img/6.svg" class="img_test"  alt="Znak6"></a>
 </div>
 
 <?php
@@ -85,7 +85,7 @@ echo '<h1 class="wynik">Wynik: ' . $_COOKIE['punkty'] . '</h1>';
 
 
 <div id="footer">
-<strong>Nauka znaków drogowych &copy; Wszelkie prawa dozwolone </strong> <!-- w footerze copyright  -->
+<strong>Nauka znaków drogowych &copy; Kamil Pawlak Joanna Lipińska Lukas Zembok Kamil Szulc</strong> <!-- w footerze copyright  -->
 </div>
 </div>
 </body>
